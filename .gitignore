@@ -1,0 +1,8 @@
+codeara/*/__pycache__/
+core/*/__pycache__/
+
+db.sqlite3
+/media
+.vscode/
+env/
+*.env
