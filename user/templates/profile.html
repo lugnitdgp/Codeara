@@ -36,24 +36,6 @@
     </div>
 </div>
 
-
-<div class='col-md-3 personal'>
-<h3 class="page-header " align='center'>Account Management</h3>
-<ul class="list-group">
-    
-        <li class="list-group-item">
-            <a  href="{% url 'account_reset_password' %}">Change Password</a>
-        </li>
-        <li class="list-group-item">
-            <a href="{% url 'account_email' %}">Change Email</a>
-        </li>
-        <li class="list-group-item">
-            <a href="{% url 'socialaccount_connections' %}">Connected Accounts</a>
-        </li>
-    
-</ul>
-</div>
-
     {% if personal %}
     <script type="text/javascript">
     $(".personal").show()

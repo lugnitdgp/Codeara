@@ -24,7 +24,15 @@ INSTALLED_APPS = [
     'codeara',
     'user',
     'compiler',
-    'knox',
+    'crispy_forms',
+    #allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #providers
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
 ]
 
 MIDDLEWARE = [

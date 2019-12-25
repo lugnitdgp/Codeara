@@ -11,6 +11,9 @@ body {
     font-family:monospace;
     font-size: 14;
 }
+#login_cont{
+    background-color: #E8EAF6;
+}
 body * {
     font-family: 'Quicksand', sans-serif;
 }

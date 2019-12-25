@@ -4,7 +4,7 @@
 {% load account socialaccount %}
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 {% block content %}
-<div class="container login-signup-container">
+<div class="container login-signup-container" id="login_cont">
     <h1>{% trans "Sign In" %}</h1>
     <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
@@ -18,11 +18,6 @@
             </button>
         </div>
         <div class="links">
-            <div class="reset-password-link">
-                <a class="button secondaryAction reset-password" href="{% url 'account_reset_password' %}">
-                    {% trans "Forgot Password ?" %}
-                </a>
-            </div>
             <div class="signup-link">
                 Don't have an account ? <a href="{{ signup_url }}">Sign up</a>
             </div>
