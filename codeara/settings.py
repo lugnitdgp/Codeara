@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'codeara',
     'user',
@@ -84,6 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -108,6 +110,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+Client_id = config('Client_id')
+Client_secret = config('Client_secret')
 
 ERROR_MESSAGE = "Something went wrong please try again"
 CORECT_SUBMISSION_MESSAGE = "Correct!!"

@@ -7,9 +7,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#editor{
-    font-family: 'Quicksand', sans-serif !important;
-    font-size: 24;
+.ace_editor, .ace_editor div{
+    font-family:monospace;
+    font-size: 14;
 }
 body * {
     font-family: 'Quicksand', sans-serif;

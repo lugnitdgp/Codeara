@@ -25,10 +25,17 @@
         </div>
         <div id="outer" class="col-sm-5" style="padding-top: 3px;">
             <select id="language" data-placeholder="Choose a Language..." class="" tabindex="1">
-            <option value="4">C</option>
-            <option value="34">Python</option>
-            <option value="27">Java</option>
-            <option value="10">C++</option>
+            <option value="1">c</option>
+            <option value="3">python3</option>
+            <option value="3">java</option>
+            <option value="3">cpp14</option>
+            <option value="3">go</option>
+            <option value="3">sql</option>
+            <option value="3">csharp</option>
+            <option value="3">dart</option>
+            <option value="3">nodejs</option>
+            <option value="2">kotlin</option>
+            <option value="0">brainfuck</option>
         </select>
         </div>
         <div class="col-sm-4"></div>
@@ -69,6 +76,7 @@
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/c_cpp");
     editor.setShowPrintMargin(false);
+    editor.setFontSize("14px");
     $('select').select2();
 
     $("#language").change(function () {
@@ -99,7 +107,7 @@
         $.ajax(
             {
                 type: "POST",
-                url : "{% url 'result' %}",
+                url : "{% url 'compiler:result' %}",
                 data: {
 
                     script: editor.getValue(),
@@ -113,9 +121,8 @@
                 success: function (output) {
                     // enables submit btn
                     $("#btn").prop('disabled', false)
-                    var str = JSON.parse(output);
-                    //var str = (output.output).toString();
-                    //str=decodeURIComponent(escape(str));
+                    var str = (output.output).toString();
+                    str=decodeURIComponent(escape(str));
                  $("#output").html(str);
                 },
 
