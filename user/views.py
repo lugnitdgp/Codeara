@@ -5,10 +5,14 @@ from google.auth.transport import requests
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
 import os
+from compiler.models import Question
 from decouple import config
 
 def home(request):
-    return render(request,"home.html")
+    ques = Question.objects.order_by('?').first()
+    #ques = Question.objects.all()
+    question = {"q_num":ques}
+    return render(request,"home.html", question)
 
 def signup(request):
     if request.method == 'POST':
