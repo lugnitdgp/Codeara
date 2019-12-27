@@ -8,5 +8,6 @@ app_name = 'user'
 urlpatterns = [
     path('', views.home, name = 'home'),
     path('accounts/profile/', views.profile , name = 'profile'),
-    #path('accounts/profiles/(?P<id>\d+)', views.profiles , name = 'user_profile'),
+    #path('accounts/profile/view/', views.user_detail, name = 'user_detail'),
+    path('accounts/profile/view', views.user_detail, name='user_detail'),
 ]

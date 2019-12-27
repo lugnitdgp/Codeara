@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
 import os
 from compiler.models import Question
+#from user.models import User
 from decouple import config
 
 def home(request):
@@ -14,22 +15,14 @@ def home(request):
     question = {"q_num":ques}
     return render(request,"home.html", question)
 
-def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('code_editor.html')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+def profile(request):
+    #cur_user = request.User
+    #usr = User.objects.get(id=cur_user.id)
+    #usr = {"user":usr}
+    return render(request,'code_editor.html')
 
-def profile(requests):
-    context = {}
-    user = requests.user
-    context['name']=user.username
-    return render(requests,'code_editor.html')
+def user_detail(request):
+    #cur_user = request.user.get.id
+    return render(request,'profile.html')
+
+

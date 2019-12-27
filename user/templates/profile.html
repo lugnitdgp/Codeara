@@ -1,44 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}
-    Profile
-{% endblock %}
+
+{% block body %}
 {% block content %}
-    <style type="text/css">
-    .personal{
-        display: none;
-    }
-    </style>
-<div class='col-md-9'>
-    {% if personal %}
-     <h1>Hello {{ name }}</h1>
-    {% else %} 
-    <h1>You are viewing {{name}}'s profile</h1>
-    {% endif %}
-    
-    <div class="panel panel-default">
-    <div class="panel-body">
-    <p>Total points:- {{ points }}</p>
-    {% if solved %}
-    <p>Solved questions:-</p>
-    <ul class="list-group">
-    {% for question in solved %}
-        <li class="list-group-item">{{ question }}</li>
-    {% endfor %}
-    </ul>
-    {% else   %}
-        <h4>No questions solved</h4>
-        <a href="{% url 'alltracks' %}" class="personal">Solve questions</a>
-
-
-    {% endif %}
-    </div>
-
-    </div>
-</div>
-
-    {% if personal %}
-    <script type="text/javascript">
-    $(".personal").show()
-    </script>
-{% endif %}
-{% endblock %}
+{% load account socialaccount %}
+<div class="container login-signup-container" id="login_cont">
+    <p>You're logged in {{ user.get_provider }} as {{ user }}.</p>
+    <img src="{{ user.get_avatar_url }}" />
+ </div>
+{% endblock content %}
+{% endblock body %}
