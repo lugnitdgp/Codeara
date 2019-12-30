@@ -4,8 +4,14 @@
 {% block content %}
 {% load account socialaccount %}
 <div class="container login-signup-container" id="login_cont">
-    <p>You're logged in {{ user.get_provider }} as {{ user }}.</p>
-    <img src="{{ user.get_avatar_url }}" />
+    <h2> WELCOME, </h2>
+    <p><img src="{{user.socialaccount_set.all.0.get_avatar_url}}"
+        width="50" height="50"></p>
+     {{ user.socialaccount_set.all.0.extra_data.name }} ({{ user }}).<br>
+    <br>No. of Submissions : {{usr.n_subm}} <br>
+   <!-- <br>No. of Succesful Submissions : {{usr.n_s_sub}}<br>-->
+    <br>Languages Used : {{usr.lang}}    <br>
+    <br>
  </div>
 {% endblock content %}
 {% endblock body %}

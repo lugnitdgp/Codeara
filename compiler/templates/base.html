@@ -46,6 +46,9 @@
              {% else %}
               <li><a href="{% url 'account_login' %}">Login</a></li>
             {% endif %}
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'user:leaderboard' %}">Leaderboard</a></li>
+          </ul>
         </div>
       </div>
     </nav>

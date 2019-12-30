@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% block content %}
+{% load account socialaccount %}
+<div class="container login-signup-container" id="login_cont">
+    <h1> Leaderboard </h1>
+    <h4 style="text-align:center">NAME : &emsp;No. of Submissions &emsp; Languages  </h4> <br>
+    {% for users in user %}
+    <p style="text-align:center"><img src="{{users.user.socialaccount_set.all.0.get_avatar_url}}"
+        width="25" height="25">{{users.first_name}}({{users.user}}) &emsp;&emsp; {{users.n_subm}}&emsp;&emsp; {{users.lang}}</p>
+    {% endfor %}
+ </div>
+{% endblock content %}
+{% endblock body %}

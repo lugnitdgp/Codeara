@@ -10,4 +10,5 @@ urlpatterns = [
     path('accounts/profile/', views.profile , name = 'profile'),
     #path('accounts/profile/view/', views.user_detail, name = 'user_detail'),
     path('accounts/profile/view', views.user_detail, name='user_detail'),
+    path('leaderboard/', views.leaderboard, name='leaderboard'),
 ]
