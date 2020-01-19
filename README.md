@@ -1,7 +1,7 @@
 # Codeara
 An Online Code Execution Platform using API
 
-<img srd="GSoC.png" width="50%" height="50%">
+<img src="GSoC.png" width="50%" height="50%">
 
 
 
