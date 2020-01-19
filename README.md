@@ -27,18 +27,18 @@ source <environment name>/bin/activate
 
 * cd Codeara
 
-* pip install -r requirements.txt
+* pip3 install -r requirements.txt
 
 * Run the Migrations
 ```
-python manage.py makemigrations
+python3 manage.py makemigrations
 
-python manage.py migrate
+python3 manage.py migrate
 
 ``` 
 * Run the development server 
 ```
-python manage.py runserver
+python3 manage.py runserver
 
 ```
 * Head to server http://localhost:8000
