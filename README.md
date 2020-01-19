@@ -1,25 +1,33 @@
 # Codeara
 An Online Code Execution Platform using API
 
+<img srd="GSoC.png" width="50%" height="50%">
+
+
+
 > This app is used to compile and execute the program with login feature. It also has sample problems and 
 user's progress record.
 
 ##  Starting the Project 
 
-* Fork and Clone the repository
+* mkdir CodeCompiler
 
+* cd CodeCompiler
 
-* Create a virtualenv with python and activate it
+* Creating a virtualenv with python and activate it
 ```
-virtualenv env
+sudo apt install python3-venv
 
-source env/bin/activate
+python3 -m venv <environment name>
+
+source <environment name>/bin/activate
 ```
 
-* Move into the folder and install required dependencies
-```
-pip install -r requirements.txt
-```
+* git clone https://github.com/lugnitdgp/Codeara.git
+
+* cd Codeara
+
+* pip install -r requirements.txt
 
 * Run the Migrations
 ```
@@ -39,6 +47,12 @@ python manage.py runserver
 
 ## For Contribution
 
-* Solve an issue or add any feature.
-* Open any issue or request some nice features.
+Read the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> to know how to contribute
+1. Find an issue to resolve.
+2. Comment on the issue.
+3. Fork the repository
+4. Make changes and push.
+5. Make a pull request and wait for merging.
+
+
 
