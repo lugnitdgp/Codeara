@@ -20,9 +20,9 @@ user's progress record.
 
 ##  Starting the Project 
 
-* mkdir CodeCompiler
+* `mkdir CodeCompiler`
 
-* cd CodeCompiler
+* `cd CodeCompiler`
 
 * Creating a virtualenv with python and activate it
 ```
@@ -33,11 +33,11 @@ python3 -m venv <environment name>
 source <environment name>/bin/activate
 ```
 
-* git clone https://github.com/lugnitdgp/Codeara.git
+* `git clone https://github.com/lugnitdgp/Codeara.git`
 
-* cd Codeara
+* `cd Codeara`
 
-* pip3 install -r requirements.txt
+* `pip3 install -r requirements.txt`
 
 * Run the Migrations
 ```
