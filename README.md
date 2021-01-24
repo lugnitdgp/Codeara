@@ -37,6 +37,8 @@ source <environment name>/bin/activate
 
 * `cd Codeara`
 
+* `sudo apt-get install python3-dev default-libmysqlclient-dev build-essential`
+
 * `pip3 install -r requirements.txt`
 
 * Run the Migrations
