@@ -40,6 +40,8 @@ source <environment name>/bin/activate
 
 * `pip3 install -r requirements.txt`
 
+* `cp .env.example .env`
+
 * Run the Migrations
 ```
 python3 manage.py makemigrations
