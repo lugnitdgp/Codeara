@@ -1,7 +1,7 @@
 # Codeara
 An Online Code Execution Platform using API
 
-<img src="GSoC.png" width="50%" height="50%">
+
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 <br>
