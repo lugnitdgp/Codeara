@@ -8,24 +8,49 @@
     <h1>{% trans "Sign In" %}</h1>
     <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
+       <!-- <br> Username:
+       <input type="text" name="{{form.username}}" size = "20">
+       <br> <br> <br> Password:
+       <input type="password" name="{{form.password}}" size="20">
+       <br> <br><br> <input type="submit" value = "Sign In" size=15> -->
+       <!--{{form.as_p}} -->
+       {% for field in form %}
+        <p>
+        {{ field.label_tag }}&nbsp;{{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+        </p>
+        {% endfor %}
+       <br> <button class="btn login-signup-button" type="submit">{% trans 'Sign In' %}</button>
+    </form> 
+    
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
         <div class="links">
             {% get_providers as socialaccount_providers %}
             {% if socialaccount_providers %}
                 <div class="social-login-bar">
-                    <div class="social-login-text"></div>
+                    <div class="social-login-text">or sign in with</div>
                     <a href="/accounts/google/login/?process=login">
-                        <i class="fa fa-3x fa-google"></i>
+                        <i class="fa fa-3x fa-google"></i>     <!--GOOGLE ICON-->
                     </a>
-                    <!--
+                    
                     <a href="/accounts/github/login/?process=login">
                         <i class="fa fa-3x fa-github"></i>
                     </a>
                     <a href="/accounts/facebook/login/?process=login">
                         <i class="fa fa-3x fa-facebook"></i>
-                    </a>-->
+                    </a>
                 </div>
             {% endif %}
+             
         </div>
     </form>
+    Don't have an account? <a href="{% url 'account_signup' %}">Create account </a> 
+    <br> <br>
 </div>
 {% endblock %}

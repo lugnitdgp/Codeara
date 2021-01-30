@@ -109,7 +109,8 @@ USE_L10N = True
 USE_TZ = True
 
 ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED=True
+ACCOUNT_AUTHENTICATION_METHOD='username'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -121,7 +122,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION='none'
 Client_id = config('Client_id')
 Client_secret = config('Client_secret')
 
