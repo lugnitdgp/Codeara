@@ -17,11 +17,37 @@ body {
 body * {
     font-family: 'Quicksand', sans-serif;
 }
+
+
+
+#q_id2{
+    margin-top: 9px;
+    height:320px;
+    
+}
+
 #q_id{
     text-decoration-color:#00c853;
     background-color: #E8EAF6;
     font-size: 18px !important;
+    margin-right: 88px;
+    margin-left: 91px;
+    
 }
+#q_id1{
+    text-decoration-color:#00c853;
+    background-color: #E8EAF6;
+    font-size: 18px !important;
+    margin-right: 88px;
+    margin-left: 91px;
+     
+}
+
+
+
+
+
+
 #spacing {
     padding-top: 40%;
 }

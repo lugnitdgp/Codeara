@@ -41,5 +41,20 @@ def leaderboard(request):
     p = User_profile.objects.order_by("-n_subm")
     users = {"user":p}
     return render(request,"leaderboard.html",users)
+#Added by sahil
+def tutorial(request):
+	return render(request,"tutorial.html")
+
+
+def tutorialpython(request):
+	return render(request, "python.html")
+	
+def tutorialcpp14(request):
+	return render(request, "cpp14.html")
+
+
+def tutorialgo(request):
+	return render(request, "go.html")
+	
 
 
