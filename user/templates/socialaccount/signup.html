@@ -7,7 +7,7 @@
 {% block content %}
     <div class="container login-signup-container" id="login_cont">
         <h1>{% trans "Sign Up" %}</h1>
-        <form method="post" action="{% url 'account_signup' %}">
+        <form method="post" action="{% url 'socialaccount_signup' %}">
         {% csrf_token %}
         {% for field in form %}
         <p>

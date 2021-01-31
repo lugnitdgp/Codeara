@@ -58,6 +58,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -108,9 +110,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_USERNAME_REQUIRED=True
-ACCOUNT_AUTHENTICATION_METHOD='username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED=False
+ACCOUNT_AUTHENTICATION_METHOD="email"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -124,8 +126,7 @@ AUTHENTICATION_BACKENDS = (
 )
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION='none'
-Client_id = config('Client_id')
-Client_secret = config('Client_secret')
+EMAIL_FILE_PATH = os.path.join(BASE_DIR,'sent_emails')
 
 ERROR_MESSAGE = "Something went wrong please try again"
 CORECT_SUBMISSION_MESSAGE = "Correct!!"
