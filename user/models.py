@@ -8,6 +8,7 @@ class User_profile(models.Model):
   n_subm = models.IntegerField(default=0)
   n_s_sub = models.IntegerField(default=0)
   lang = models.CharField(max_length=400,blank=True)
+  profile_image = models.ImageField(default='default_avatar.png', upload_to='users/', null=True, blank=True)
 
   def __str__(self):
     return self.first_name

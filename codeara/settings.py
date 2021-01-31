@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
+
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,14 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATICFILES_DIRS = [
+   # os.path.join(BASE_DIR, 'static'),
+
+#]
+#media files
+MEDIA_ROOTS = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
