@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
-
+{% load static%}
 {% block body %}
 {% block content %}
 {% load account socialaccount %}
 <div class="container login-signup-container" id="login_cont">
     <h2> WELCOME, </h2>
+    {% if user.socialaccount_set.all.0.get_avatar_url%}
     <p><img src="{{user.socialaccount_set.all.0.get_avatar_url}}"
         width="50" height="50"></p>
+    {% else %}
+    <p><img src="{% static 'compiler/image/peng.png' %}" width="50" height="50"></p>
+    {% endif %}
      {{ user.socialaccount_set.all.0.extra_data.name }} ({{ user }}).<br>
     <br>No. of Submissions : {{usr.n_subm}} <br>
    <!-- <br>No. of Succesful Submissions : {{usr.n_s_sub}}<br>-->
-    <br>Languages Used : {{usr.lang}}    <br>
+    <br>Languages Used : {{usr.lang}}    <br><br>
+    {% if user.has_usable_password %}
+    <a href="{% url 'account_change_password' %}">Password Management</a>
+    {% else %}
+    <a href="{% url 'account_set_password' %}">Password Management</a>
+    {% endif %}
+    <br>
     <br>
  </div>
 {% endblock content %}
