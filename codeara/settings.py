@@ -110,6 +110,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+Client_id = config('Client_id')
+Client_secret = config('Client_secret')
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED=False
 ACCOUNT_AUTHENTICATION_METHOD="email"
